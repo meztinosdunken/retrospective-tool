@@ -1,15 +1,1 @@
 # This is a configuration file for Git to ignore specific files and directories
-# Ignore node modules directory
-node_modules/
-
-# Ignore distribution files
-dist/
-
-# Ignore environment variable file
-.env
-
-# Ignore log files
-*.log
-
-# Ignore cache files
-.cache/
