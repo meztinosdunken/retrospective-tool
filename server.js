@@ -11,6 +11,12 @@ app.use(express.json()); // Parse JSON bodies
 
 const PORT = process.env.PORT || 3000;
 
+// Check MongoDB URI
+if (!process.env.MONGODB_URI) {
+  console.error('MONGODB_URI is not set in the environment variables');
+  process.exit(1);
+}
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected!'))
