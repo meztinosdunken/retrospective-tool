@@ -4,9 +4,10 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
+// Initialize the Express application
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // Enable CORS
+app.use(express.json()); // Parse JSON bodies
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,11 +22,12 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something went wrong!');
 });
 
-// Routes
+// Define routes
 app.get('/', (req, res) => {
   res.send('Welcome to the Retrospective Tool API!');
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
