@@ -7,3 +7,9 @@ dist/
 
 # Ignore environment variable file
 .env
+
+# Ignore log files
+*.log
+
+# Ignore cache files
+.cache/
