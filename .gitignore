@@ -1,1 +1,6 @@
 # This is a configuration file for Git to ignore specific files and directories
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
