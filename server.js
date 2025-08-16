@@ -15,6 +15,12 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .then(() => console.log('MongoDB connected!'))
   .catch(err => console.error(err));
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+});
+
 // Routes
 app.get('/', (req, res) => {
   res.send('Welcome to the Retrospective Tool API!');
